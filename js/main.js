@@ -136,30 +136,35 @@ function carts(img, cartTitle, cartPrice) {
   cartRow.classList.add('cart-row')
 
   const allTitle = cartItems.querySelectorAll('.cart-item-title')
+
   allTitle.forEach(e => {
     if (e.innerHTML === cartTitle) {
       alert('Item is already in cart')
-      return;
+      console.log(e.innerHTML === cartTitle)
+      return
     }
+
   })
 
   const content = `
-<div class="cart-item">
-  <img src=${img} alt="" />
-  <span class="cart-item-title">${cartTitle}</span>
-</div>
-<span class="cart-price">${cartPrice}</span>
-<div class="cart-quantity">
-  <input type="number" class="cart-quantity-input" value="1" />
-  <span class="btn-danger">
-    <i class="fas fa-trash"></i>
-  </span>
-</div>
-`
+    <div class="cart-item">
+      <img src=${img} alt="" />
+      <span class="cart-item-title">${cartTitle}</span>
+    </div>
+    <span class="cart-price">${cartPrice}</span>
+    <div class="cart-quantity">
+      <input type="number" class="cart-quantity-input" value="1" />
+      <span class="btn-danger">
+        <i class="fas fa-trash"></i>
+      </span>
+    </div>
+    `
   cartRow.innerHTML = content
   cartRow.querySelector('.fa-trash').addEventListener('click', removeItem)
   cartRow.querySelector('.cart-quantity-input').addEventListener('change', updateCartByQuantity)
 
-  cartItems.appendChild(cartRow)
+  cartItems.append(cartRow)
+
+
 
 }
