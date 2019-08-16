@@ -7,6 +7,7 @@
 body {
   overflow-x: hidden;
 }
+
 .container {
   width: 80%;
   margin: auto;
@@ -165,6 +166,11 @@ body {
   height: 20px;
 }
 
+.total {
+  text-align: right;
+  font-size: 1.1rem;
+}
+
 .purchase {
   display: flex;
   margin: 10px 0;
@@ -188,6 +194,7 @@ body {
 }
 
 .btn-checkout {
+  width: 100%;
   background: red;
   color: #fff;
 }
@@ -305,6 +312,7 @@ img {
   section .row {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .cart {
     width: 50%;
   }
@@ -336,6 +344,7 @@ img {
   section .row {
     grid-template-columns: 1fr;
   }
+
   .cart {
     width: 95%;
   }
